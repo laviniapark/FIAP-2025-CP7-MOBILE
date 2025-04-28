@@ -5,13 +5,13 @@ import client from "../../api";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 const List = ({ navigation }: NativeStackScreenProps<UsersStack>) => {
-  const [users, setUsers] = useState<Users>();
+  const [users, setUsers] = useState<Students>();
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchUsers = async () => {
     setIsLoading(true);
     try {
-      const { data } = await client.get<Users>("/users");
+      const { data } = await client.get<Students>("/students");
       setUsers(data);
     } finally {
       setIsLoading(false);

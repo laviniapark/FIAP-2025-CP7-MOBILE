@@ -1,8 +1,8 @@
-type User = {
-    id: string;
-    firstName: string;
-    lastName: string;
-    avatar: string;
-}
+type Student = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  avatar: string;
+};
 
-type Users = User[]
+type Students = Student[];
