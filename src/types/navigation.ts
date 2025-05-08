@@ -1,4 +1,6 @@
 type UsersStack = {
-    List: undefined;
-    Details: {id: string}
-}
+  List: undefined;
+  Details: { id: string };
+};
+
+export { UsersStack };

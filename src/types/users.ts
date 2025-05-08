@@ -6,3 +6,5 @@ type Student = {
 };
 
 type Students = Student[];
+
+export { Student, Students };

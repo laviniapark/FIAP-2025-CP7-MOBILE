@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { FlatList, Text, TouchableOpacity } from "react-native";
 import client from "../../api";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { UsersStack } from "../../types/navigation";
+import { Students } from "../../types/users";
 
 const List = ({ navigation }: NativeStackScreenProps<UsersStack>) => {
   const [users, setUsers] = useState<Students>();

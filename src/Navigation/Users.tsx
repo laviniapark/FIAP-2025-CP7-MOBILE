@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import List from "../Components/Users/List";
 import Details from "../Components/Users/Details";
+import { UsersStack } from "../types/navigation";
 
 const Stack = createNativeStackNavigator<UsersStack>();
 
