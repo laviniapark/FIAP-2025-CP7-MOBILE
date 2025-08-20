@@ -1,6 +1,7 @@
 type UsersStack = {
   List: undefined;
   Details: { id: string };
+  Form: undefined;
 };
 
 type HomeTabs = {

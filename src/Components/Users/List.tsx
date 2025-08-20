@@ -1,46 +1,32 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { useEffect } from "react";
 import { FlatList, Text, TouchableOpacity } from "react-native";
-import client from "../../api";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { UsersStack } from "../../types/navigation";
-import { Students } from "../../types/students";
+import { StudentContext } from "../../Context/StudentContext";
 
 const List = ({ navigation }: NativeStackScreenProps<UsersStack>) => {
-  const [users, setUsers] = useState<Students>();
-  const [isLoading, setIsLoading] = useState(false);
-
-  const fetchUsers = async () => {
-    setIsLoading(true);
-    try {
-      const { data } = await client.get<Students>("/students");
-      setUsers(data);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const { users, isLoading, fetch } = useContext(StudentContext);
 
   useEffect(() => {
-    fetchUsers();
+    fetch();
   }, []);
 
   return (
-    <>
-      <FlatList
-        refreshing={isLoading}
-        onRefresh={fetchUsers}
-        data={users}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Details", { id: item.id })}
-          >
-            <Text>
-              {item.firstName} {item.lastName}
-            </Text>
-          </TouchableOpacity>
-        )}
-      />
-    </>
+    <FlatList
+      refreshing={isLoading}
+      onRefresh={fetch}
+      data={users}
+      renderItem={({ item }) => (
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Details", { id: item.id })}
+        >
+          <Text>
+            {item.firstName} {item.lastName}
+          </Text>
+        </TouchableOpacity>
+      )}
+    />
   );
 };
 
