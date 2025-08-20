@@ -3,7 +3,7 @@ import { ActivityIndicator, Image, StyleSheet, Text, View } from "react-native";
 import client from "../../api";
 import { useEffect, useState } from "react";
 import { UsersStack } from "../../types/navigation";
-import { Student } from "../../types/users";
+import { Student } from "../../types/students";
 
 const Details = ({ route }: NativeStackScreenProps<UsersStack, "Details">) => {
   const [isLoading, setIsLoading] = useState(false);

@@ -4,7 +4,7 @@ import { FlatList, Text, TouchableOpacity } from "react-native";
 import client from "../../api";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { UsersStack } from "../../types/navigation";
-import { Students } from "../../types/users";
+import { Students } from "../../types/students";
 
 const List = ({ navigation }: NativeStackScreenProps<UsersStack>) => {
   const [users, setUsers] = useState<Students>();
@@ -25,20 +25,22 @@ const List = ({ navigation }: NativeStackScreenProps<UsersStack>) => {
   }, []);
 
   return (
-    <FlatList
-      refreshing={isLoading}
-      onRefresh={fetchUsers}
-      data={users}
-      renderItem={({ item }) => (
-        <TouchableOpacity
-          onPress={() => navigation.navigate("Details", { id: item.id })}
-        >
-          <Text>
-            {item.firstName} {item.lastName}
-          </Text>
-        </TouchableOpacity>
-      )}
-    />
+    <>
+      <FlatList
+        refreshing={isLoading}
+        onRefresh={fetchUsers}
+        data={users}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Details", { id: item.id })}
+          >
+            <Text>
+              {item.firstName} {item.lastName}
+            </Text>
+          </TouchableOpacity>
+        )}
+      />
+    </>
   );
 };
 

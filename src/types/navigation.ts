@@ -3,4 +3,9 @@ type UsersStack = {
   Details: { id: string };
 };
 
-export { UsersStack };
+type HomeTabs = {
+  Students: undefined;
+  Config: undefined;
+};
+
+export { UsersStack, HomeTabs };

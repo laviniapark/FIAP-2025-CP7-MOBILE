@@ -1,10 +1,10 @@
-type Student = {
-  id: string;
+type User = {
+  username: string;
+  password: string;
   firstName: string;
   lastName: string;
-  avatar: string;
+  email: string;
+  gender: string;
 };
 
-type Students = Student[];
-
-export { Student, Students };
+export { User };
