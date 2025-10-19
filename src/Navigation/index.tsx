@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import UsersNavigation from "./Users";
-import Login from "../Components/Auth";
 import Tabs from "./Tabs";
+import Auth from "./Auth";
 
 const Index = () => {
-    const {user} = useContext(AuthContext);
-    return user ? <Tabs /> : <Login />
-}
+  const { user } = useContext(AuthContext);
+  return user ? <Tabs /> : <Auth />;
+};
 
 export default Index;

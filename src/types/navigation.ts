@@ -9,4 +9,9 @@ type HomeTabs = {
   Config: undefined;
 };
 
-export { UsersStack, HomeTabs };
+type AuthStack = {
+  Login: undefined;
+  NewUser: undefined
+}
+
+export { UsersStack, HomeTabs, AuthStack };

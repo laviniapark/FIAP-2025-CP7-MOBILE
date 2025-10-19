@@ -2,11 +2,9 @@ import { useContext, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { AuthContext } from "../../Context/AuthContext";
 import { Button, Surface, TextInput } from "react-native-paper";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { AuthStack } from "../../types/navigation";
 
-const Login = ({ navigation }: NativeStackScreenProps<AuthStack>) => {
-  const { login } = useContext(AuthContext);
+const NewUser = () => {
+  const { createAccount } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,8 +12,7 @@ const Login = ({ navigation }: NativeStackScreenProps<AuthStack>) => {
     <Surface style={styles.container}>
       <TextInput placeholder="username" onChangeText={setUsername} />
       <TextInput placeholder="password" onChangeText={setPassword} />
-      <Button onPress={() => login(username, password)}>Login</Button>
-      <Button onPress={() => navigation.navigate("NewUser")}>Não tem conta? Clique aqui</Button>
+      <Button onPress={() => createAccount(username, password)}>Criar conta</Button>
     </Surface>
   );
 };
@@ -29,4 +26,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default NewUser;
