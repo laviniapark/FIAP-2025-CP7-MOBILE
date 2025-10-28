@@ -5,14 +5,14 @@ import { Button, Surface, TextInput } from "react-native-paper";
 
 const NewUser = () => {
   const { createAccount } = useContext(AuthContext);
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
     <Surface style={styles.container}>
-      <TextInput placeholder="username" onChangeText={setUsername} />
+      <TextInput placeholder="e-mail" onChangeText={setEmail} />
       <TextInput placeholder="password" onChangeText={setPassword} />
-      <Button onPress={() => createAccount(username, password)}>Criar conta</Button>
+      <Button onPress={() => createAccount(email, password)}>Criar conta</Button>
     </Surface>
   );
 };

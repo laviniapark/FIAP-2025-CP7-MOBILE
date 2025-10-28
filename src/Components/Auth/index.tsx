@@ -7,14 +7,14 @@ import { AuthStack } from "../../types/navigation";
 
 const Login = ({ navigation }: NativeStackScreenProps<AuthStack>) => {
   const { login } = useContext(AuthContext);
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
     <Surface style={styles.container}>
-      <TextInput placeholder="username" onChangeText={setUsername} />
+      <TextInput placeholder="email" onChangeText={setEmail} />
       <TextInput placeholder="password" onChangeText={setPassword} />
-      <Button onPress={() => login(username, password)}>Login</Button>
+      <Button onPress={() => login(email, password)}>Login</Button>
       <Button onPress={() => navigation.navigate("NewUser")}>Não tem conta? Clique aqui</Button>
     </Surface>
   );

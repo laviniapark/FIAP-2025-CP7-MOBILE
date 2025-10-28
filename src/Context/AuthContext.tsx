@@ -4,8 +4,8 @@ import * as firebase from 'firebase/auth';
 import { auth } from "../firebaseConfig";
 
 type AuthContextProps = {
-  createAccount: (username: string, password: string) => void;
-  login: (username: string, password: string) => void;
+  createAccount: (email: string, password: string) => void;
+  login: (email: string, password: string) => void;
   logout: () => void;
   user?: User;
 };
@@ -15,12 +15,12 @@ const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
 const AuthProvider = ({ children }: PropsWithChildren) => {
   const [user, setUser] = useState<User>();
 
-  const createAccount = async (username: string, password: string) => {
-    await firebase.createUserWithEmailAndPassword(auth, username, password);
+  const createAccount = async (email: string, password: string) => {
+    await firebase.createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const login = async (username: string, password: string) => {
-    await firebase.signInWithEmailAndPassword(auth, username, password);
+  const login = async (email: string, password: string) => {
+    await firebase.signInWithEmailAndPassword(auth, email, password);
   };
   const logout = async () => {
     await firebase.signOut(auth);
