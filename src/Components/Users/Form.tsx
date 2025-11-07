@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { ScrollView } from "react-native";
-import { Student } from "../../types/users";
+import { Student } from "../../types/students";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { UsersStack } from "../../types/navigation";
 import { StudentContext } from "../../Context/StudentContext";
