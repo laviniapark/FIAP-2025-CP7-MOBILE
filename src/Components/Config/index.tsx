@@ -21,7 +21,7 @@ const Config = () => {
         <Text>Sobrenome: {info?.lastName}</Text>
         <Text>Email: {user?.email}</Text>
         <Text>Nome de Usuário: {info?.username}</Text>
-        <Text>Endereço: {info?.address}</Text>
+        <Text>Endereço: {info?.address?.fullAddress}</Text>
       </Surface>
       <Button onPress={logout}>Logout</Button>
     </Surface>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     justifyContent: "center",
-  },
+  }
 });
 
 export default Config;

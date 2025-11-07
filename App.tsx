@@ -1,8 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
-import UsersNavigation from "./src/Navigation/Users";
-import Login from "./src/Components/Auth";
 import { AuthProvider } from "./src/Context/AuthContext";
 import Index from "./src/Navigation";
+import React from "react";
 
 const App = () => {
   return (

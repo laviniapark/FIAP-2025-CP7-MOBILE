@@ -7,7 +7,11 @@ type User = {
   avatar?: string;
   username?: string;
   gender?: string;
-  address?: string;
+  address?: Address;
 };
 
-export { User };
+type Address = {
+    fullAddress: string;
+}
+
+export { User , Address};
