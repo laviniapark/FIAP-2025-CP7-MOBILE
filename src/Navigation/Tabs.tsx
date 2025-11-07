@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import UsersNavigation from "./Users";
-import Config from "../Components/Config";
 import { HomeTabs } from "../types/navigation";
+import PersonalInfoNavigation from "./PersonalInfo";
 
 const Stack = createBottomTabNavigator<HomeTabs>();
 
@@ -13,7 +13,7 @@ const Tabs = () => {
       }}
     >
       <Stack.Screen name="Students" component={UsersNavigation} />
-      <Stack.Screen name="Config" component={Config} />
+      <Stack.Screen name="Config" component={PersonalInfoNavigation} />
     </Stack.Navigator>
   );
 };
