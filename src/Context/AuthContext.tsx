@@ -29,7 +29,9 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     const subscriber = firebase.onAuthStateChanged(auth, (user)=> {
       if(user){
-        setUser({email: user.email})
+        setUser({
+          uid: user.uid,
+          email: user.email})
       }
       else{
         setUser(undefined);
