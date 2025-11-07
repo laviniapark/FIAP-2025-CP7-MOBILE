@@ -20,14 +20,6 @@ EXPO_PUBLIC_MAPBOX_KEY=<seu token do mapbox>
 ```
 
 # Rodando o projeto
-Para rodar o projeto num dispositivo Android:
+Para rodar o projeto:
 
-`npm run android`
-
-Para rodar o projeto num dispositivo iOS:
-
-`npm run ios`
-
-Para rodar o projeto num dispositivo Web:
-
-`npm run web`
+`npx expo start`
