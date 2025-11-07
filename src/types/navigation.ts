@@ -4,6 +4,11 @@ type UsersStack = {
   Form: undefined;
 };
 
+type PersonalInfoStack = {
+  Config: undefined;
+  Form: undefined;
+};
+
 type HomeTabs = {
   Students: undefined;
   Config: undefined;
@@ -14,4 +19,4 @@ type AuthStack = {
   NewUser: undefined
 }
 
-export { UsersStack, HomeTabs, AuthStack };
+export { UsersStack, HomeTabs, AuthStack, PersonalInfoStack };
