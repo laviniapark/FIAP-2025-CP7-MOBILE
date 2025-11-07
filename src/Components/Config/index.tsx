@@ -1,21 +1,27 @@
-import { useContext } from "react";
-import { AuthContext } from "../../Context/AuthContext";
+import { useContext, useEffect } from "react";
 import { Button, Surface, Text } from "react-native-paper";
 import { StyleSheet } from "react-native";
+import { UserContext } from "../../Context/UserContext";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Config = () => {
   const { user, logout } = useContext(AuthContext);
+  const { users: info, fetch } = useContext(UserContext);
+
+  useEffect(() => {
+    if (user?.uid) {
+      fetch(user.uid);
+    }
+  }, [user]);
+
   return (
     <Surface style={styles.container}>
       <Surface mode="flat" style={styles.content}>
-        <Text>Primeiro Nome</Text>
-        <Text>{user?.firstName}</Text>
-        <Text>Sobrenome</Text>
-        <Text>{user?.lastName}</Text>
-        <Text>Email</Text>
-        <Text>{user?.email}</Text>
-        <Text>Genero</Text>
-        <Text>{user?.gender}</Text>
+        <Text>Primeiro Nome: {info?.firstName}</Text>
+        <Text>Sobrenome: {info?.lastName}</Text>
+        <Text>Email: {user?.email}</Text>
+        <Text>Nome de Usuário: {info?.username}</Text>
+        <Text>Endereço: {info?.address}</Text>
       </Surface>
       <Button onPress={logout}>Logout</Button>
     </Surface>
