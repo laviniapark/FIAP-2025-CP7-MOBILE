@@ -16,6 +16,7 @@ EXPO_PUBLIC_FIREBASE_PROJECT_ID=<sua configuração do firebase>
 EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=<sua configuração do firebase>
 EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=<sua configuração do firebase>
 EXPO_PUBLIC_FIREBASE_APP_ID=<sua configuração do firebase>
+EXPO_PUBLIC_MAPBOX_KEY=<seu token do mapbox>
 ```
 
 # Rodando o projeto
